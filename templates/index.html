@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>多元时序数据填充</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/index.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>	
+</head>
+<body>
+    <div class="caption">
+        <p id="mainCap">多元时序数据填充工具</p>
+        <P id="mainSub">Time Series Data Imputation Tool</P>
+    </div>
+
+    <div class="content">
+        <form id="impute_form" action='/impute' method="POST">
+                <font size="3"> 
+                <div class="panel">
+                        <div class="group">
+                                <label>原始数据：</label>
+                                <input type="text" name="data_path" placeholder="需要填充的数据路径：如‘data/raw_data.csv’">
+                        </div>
+                        <div class="group">
+                                <label>保存路径：</label>
+                                <input type="text" name="save_path" placeholder="填充后数据的保存位置">
+                        </div>
+                        <div class="group">
+                                <label>迭代次数：</label>
+                                <input type="text" name="epoch" placeholder="模型训练迭代次数">
+                        </div>
+                        <div class="group">
+                                <label>更新频率：</label>
+                                <input type="text" name="n_critic" placeholder="判别模型的更新频率：参数范围1~5">
+                        </div>
+                </div>
+                <div class="precious">
+                        <!-- <button id="start-btn" class="btn btn-primary">开始填充</button> -->
+                        <input type="submit" value="开始填充" id="submitBtn">
+                </div>
+        </form>
+        <div id="progress" style="display: none;" class="panel">
+                <!-- <p>填充进度：</p> -->
+                <div id="progress-bar" class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 0%">0%</div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+                $("#impute_form").submit(function() {
+                        // 显示进度条
+                        $('#progress').show();
+                        // 禁用按钮，防止再次点击
+                        const submitBtn = document.getElementById('submitBtn');
+                        submitBtn.value = '正在填充'
+                        submitBtn.disabled = true;
+                        submitBtn.setAttribute("style", "backgroud-color: gray;");
+                        submitBtn.setAttribute("style", "cursor: not-allowed;");
+                        // 开始监听进度条信息，监督频率为500毫秒
+                        var intervalId = setInterval(function(){
+                                $.getJSON("/progress", function(data) {
+                                        var progress = data.progress;
+                                        $("#progress-bar").width(progress + "%").html(progress + "%");
+                                        // 进度条为100%时停止监听
+                                        if(progress == 100){
+                                                // 触发结果页面显示
+                                                // $.get("/result")
+                                                clearInterval(intervalId)
+                                        }
+                                });
+                        }, 500);
+                });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+
+body {
+    /* 设置全局字体样式 */
+    font-family: Arial, sans-serif;
+    /* 设置背景图片*/
+    background:#eeeeee url("bj.png") ;
+    background-attachment: fixed;
+    background-repeat:repeat;
+    /* margin: 5%; */
+  }
+  
+/* 设置标题的样式 */
+.caption{
+	text-align: center;
+	margin-top: 50px;
+	}
+	@font-face {font-family:font2;src: url(font.woff);}
+	@font-face {font-family:font3;src: url(BankSansEFCYCondensed-Medium.woff);}
+
+    #mainCap{
+        font-family:font2;
+        font-size:2.4em;
+        font-style: italic;
+    }
+    #mainSub{
+        font-family:font3;
+        font-size:1.42em;
+        letter-spacing: 0.2px;
+        font-style: italic;
+        margin-top:-1.0em
+    }
+  
+/* 主体参数框 */
+.content {
+    /* text-align: center; */
+    max-width: 400px;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    /* display: inline-block; */
+    margin:auto;
+    /* 设置子元素居中 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+  /* 设置表单样式 */
+  form {
+    margin: 40px auto;
+    max-width: 300px;
+  }
+
+  
+  .group {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: inline-block;
+    width: 200px;
+    font-weight: bold;
+    font-family: 宋体;
+    font-size: large;
+  }
+  
+  input[type="text"] {
+    width: 300px;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  /* 设置输入框中提示词样式 */
+  input::placeholder{
+    color: #999;
+    font-size: small;
+  }
+  
+  /* 设置按钮样式 */
+  input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #007bff;
+    border: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* 设置进度条样式 */
+  #progress {
+    margin: 20px auto 10px;
+    max-width: 300px;
+    text-align: center;
+  }
+  
+  #progress p {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .progress-bar {
+    height: 20px;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    border-radius: 5px;
+  }
+  
+  /* 设置结果样式 */
+  .result {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    margin: 50px auto;
+    max-width: 1000px;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+
+  .result h2 {
+    width: 80%;
+    font-size: 24px;
+    margin: 20px auto;
+  }
+
+  .result p {
+    width: 80%;
+    margin: 20px auto;
+  }
+
+  .result table {
+    text-align: center;
+    width: 80%;
+    border-collapse: collapse;
+    margin: 20px auto;
+  }
+
+  .result th, .result td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+
+  .result th {
+    font-weight: bold;
+    text-align: center;
+  }

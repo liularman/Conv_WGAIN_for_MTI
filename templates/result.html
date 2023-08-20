@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/index.css">
+    <title>多元时序数据填充</title>
+</head>
+<body>
+    <div class="caption">
+        <p id="mainCap">多元时序数据填充工具</p>
+        <P id="mainSub">Time Series Data Imputation Tool</P>
+    </div>
+
+    <div class="result">
+        <h2>{{result}}</h2>
+        <p>部分填充数据展示如下</p>
+        <table>
+            {{table|safe}}
+        </table>
+    </div>
+</body>
+</html>

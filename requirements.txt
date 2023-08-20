@@ -1,0 +1,4 @@
+pandas==1.4.4
+flask==2.3.1
+numpy==1.21.5
+torch==1.12.1

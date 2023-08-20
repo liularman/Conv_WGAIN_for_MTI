@@ -1,0 +1,15 @@
+Conv_WGAIN_for_MTI
+time：2023.4.21
+此版本是将Conv_WGAIN模型用于实际多元时序数据缺失插补的项目
+
+需要使用以下库：
+python==3.8.13
+pandas==1.4.4
+flask==2.3.1
+numpy==1.21.5
+torch==1.12.1
+
+可以在终端使用下面的命令安装依赖：
+#
+pip install -r requirements.txt
+#
