@@ -21,10 +21,15 @@ This tool is a multi-variate time series data imputation tool developed based on
     python flask_web.py
     ~~~
 3. Open [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your browser to launch the imputation tool. The center box on the imputation tool page is used to enter some necessary parameter information. "Original Data" refers to the location of the original data with missing values, it is recommended to copy the data to the 'data' folder under the project. "Save Path" refers to where the data will be saved after imputation. "Number of Epochs" refers to the number of iterations the model will train. "Update Frequency" refers to how many batches of data the discriminator will be updated after each training, this value is usually between 1-5. To guide the user, corresponding prompt words are set in the text box.
+
     ![](./images/homepage.png)
+    
 4. After filling in the relevant parameters, click the "Start Imputing" button to start imputation. During imputation, a progress bar will appear below the button to indicate the imputation progress, and to prevent the user from clicking the button again, the clickable property of the cancel button will be disabled. In addition, when the mouse hovers over the button, the mouse cursor will change to disabled to indicate to the user.
+
     ![](./images/imputating.png)
+
 5. After imputation is complete, it will jump to the result page. Inform the user of the save path of the data, and display some of the data to the user to see the imputation effect.
+
     ![](./images/result.png)
 
 ## Citation
