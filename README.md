@@ -3,7 +3,7 @@
 *Read this in [English](README_en.md).*
 
 ## 概览
-本工具是基于Conv_WGAIN模型开发的多元时序数据填充工具，模型填充原理是生成器根据存在数据分布进行学习，然后生成数据填充缺失部分的数据，让判别器无法识别出真实数据和生成数据。该模型的论文已被中文核心期刊《计算机科学与工程》录用发表。本工具利用Flask框架编写了一个WEB端的填充工具，可以对任意的多元时序数据进行缺失值填充。用于填充数据的Conv_WGAIN模型不是预训练好的模型，因为该模型运行速度极快，这也让该工具可以广泛用于不同的数据集。
+本工具是基于[Conv_WGAIN](https://kns.cnki.net/kcms2/article/abstract?v=6Zsqnb4eDBVfRzgCdj1ce6Xy-LenR3oy2cLqVtA492kfQTvadKxo2XLmsrm9idYh9NGRE7A8PieyWnx5SfIPVFRQeAlJH08Ei9A0dM0xLrseEHssEGs_y2LTq6hAdzhzNHk-DQ9ihwc=&uniplatform=NZKPT&flag=copy)模型开发的多元时序数据填充工具，模型填充原理是生成器根据存在数据分布进行学习，然后生成数据填充缺失部分的数据，让判别器无法识别出真实数据和生成数据。该模型的论文已被中文核心期刊《计算机科学与工程》录用发表。本工具利用Flask框架编写了一个WEB端的填充工具，可以对任意的多元时序数据进行缺失值填充。用于填充数据的Conv_WGAIN模型不是预训练好的模型，因为该模型运行速度极快，这也让该工具可以广泛用于不同的数据集。
 
 ## 环境依赖
 - Python 3.8.13
